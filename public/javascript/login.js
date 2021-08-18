@@ -16,6 +16,7 @@ async function loginFormHandler(event) {
 
 		if (response.ok) {
 			document.location.replace('/dashboard');
+			localStorage.setItem('accessToken', response.accessToken);
 		} else {
 			alert(response.statusText);
 		}
