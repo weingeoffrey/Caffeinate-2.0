@@ -3,6 +3,8 @@ const morgan = require('morgan');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
+require('@tensorflow/tfjs-node');
+
 require('dotenv').config();
 
 require('./auth/passport');
