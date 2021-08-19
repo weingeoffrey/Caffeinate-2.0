@@ -5,7 +5,7 @@ async function loginFormHandler(event) {
 	const password = document.querySelector('#password-login').value.trim();
 
 	if (email && password) {
-		const response = await fetch('/api/users/login', {
+		const response = await fetch('/api/v1/login', {
 			method: 'post',
 			body: JSON.stringify({
 				email,
@@ -14,15 +14,18 @@ async function loginFormHandler(event) {
 			headers: { 'Content-Type': 'application/json' },
 		});
 
+		const body = await response.json();
+
 		if (response.ok) {
-			document.location.replace('/dashboard');
-			localStorage.setItem('accessToken', response.accessToken);
+			localStorage.setItem('accessToken', body.accessToken);
+			document.location.replace('/');
 		} else {
 			alert(response.statusText);
 		}
 	}
 }
 
-document
-	.querySelector('#btnLogin')
-	.addEventListener('submit', loginFormHandler);
+// When submit button is pressed, register user
+$('#btnLogin').on('click', function (event) {
+	loginFormHandler(event);
+});
