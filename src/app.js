@@ -30,11 +30,23 @@ app.use(express.json());
 // Use defined API
 app.use('/api/v1', api);
 
-app.engine('handlebars', exphbs());
+app.engine('handlebars', exphbs({ layoutsDir: './views/layouts' }));
 app.set('view engine', 'handlebars');
 
+// Handlebars routes
 app.get('/', function (req, res) {
-	res.render('main', { layout: false });
+	res.render('map', { layout: 'main' });
 });
 
+app.get('/reviews', function (req, res) {
+	res.render('reviews', { layout: 'main' });
+});
+
+app.get('/login', function (req, res) {
+	res.render('login', { layout: 'main' });
+});
+
+app.get('/signup', function (req, res) {
+	res.render('signup', { layout: 'main' });
+});
 module.exports = app;
