@@ -1,13 +1,59 @@
-<form class='sign-up-form'>
-	<div>
-		<label for='email-login'>Email:</label>
-		<input type='text' id='email-signup' />
+<section class='login-section'>
+	<div class='hero-body'>
+		<div class='container'>
+			<div class='columns is-centered'>
+				<div class='column is-5-tablet is-4-desktop is-3-widescreen'>
+					<form onsubmit='return false' class='box'>
+						<div class='field'>
+							<label for='' class='label has-text-dark'>Username</label>
+							<div class='control has-icons-left'>
+								<input
+									id='username-signup'
+									type='text'
+									placeholder='e.g. bobsmith'
+									class='input'
+									required
+								/>
+							</div>
+						</div>
+						<div class='field'>
+							<label for='' class='label has-text-dark'>Email</label>
+							<div class='control has-icons-left'>
+								<input
+									id='email-signup'
+									type='email'
+									placeholder='e.g. bobsmith@gmail.com'
+									class='input'
+									required
+								/>
+								<span class='icon is-small is-left'>
+									<i class='fa fa-envelope'></i>
+								</span>
+							</div>
+						</div>
+						<div class='field'>
+							<label for='' class='label has-text-dark'>Password</label>
+							<div class='control has-icons-left'>
+								<input
+									id='password-signup'
+									type='password'
+									placeholder='*******'
+									class='input'
+									required
+								/>
+								<span class='icon is-small is-left'>
+									<i class='fa fa-lock'></i>
+								</span>
+							</div>
+						</div>
+						<div class='field'>
+							<button id='btnRegister' class='button is-success' type='submit'>
+								Register
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div>
-		<label for='password-login'>Password:</label>
-		<input type='password' id='password-signup' />
-	</div>
-	<div>
-		<button type='submit' class='button is-primary'>Sign Up</button>
-	</div>
-</form>
+</section>
