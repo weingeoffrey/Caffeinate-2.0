@@ -32,4 +32,25 @@ fetchReviews().then((response) => {
      <div class="media-content"><p>${reviewArray[2].body}</p></div>
      </div></div></article>`
 	);
+
+	$('#reviewSearch').keyup(function () {
+		var val = $.trim(this.value).toUpperCase();
+		console.log(val);
+		if (val !== '') {
+			$('#search-review-section').html('');
+			const searchResults = reviewArray.filter((e) =>
+				e.Shop.name.toUpperCase().trim().includes(val)
+			);
+			searchResults.forEach((e) => {
+				$('#search-review-section').append(
+					'<article class="card column"><div class="media-content"><div class="content"><p>' +
+						`<strong>${e.Shop.name}</strong><br>
+       <strong>${e.User.username}</strong></p><br>` +
+						`<div class="media-left"><p><strong>${e.rating} stars</strong></div>
+       <div class="media-content"><p>${e.body}</p></div>
+       </div></div></article>`
+				);
+			});
+		}
+	});
 });

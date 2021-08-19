@@ -86,7 +86,8 @@ body {
 #directions,
 #login-section,
 #register-section,
-#review-section {
+#review-section,
+#search-review-section {
 	width: 80%;
 	max-width: 80%;
 	margin: auto;
