@@ -85,7 +85,8 @@ body {
 #map-section,
 #directions,
 #login-section,
-#register-section {
+#register-section,
+#review-section {
 	width: 80%;
 	max-width: 80%;
 	margin: auto;
