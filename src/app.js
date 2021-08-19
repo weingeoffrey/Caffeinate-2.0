@@ -49,4 +49,8 @@ app.get('/login', function (req, res) {
 app.get('/post', function (req, res) {
 	res.render('post', { layout: 'main' });
 });
+
+app.get('/signup', function (req, res) {
+	res.render('signup', { layout: 'main' });
+});
 module.exports = app;
