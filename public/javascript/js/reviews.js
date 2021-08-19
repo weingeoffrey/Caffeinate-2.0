@@ -11,7 +11,6 @@ const createReviewCards = async (reviewArray) => {
 fetchReviews().then((response) => {
 	var reviewArray = response;
 	createReviewCards(reviewArray);
-	console.log(reviewArray);
 	$('#review-section').append(
 		'<article class="card column"><div class="media-content"><div class="content"><p>' +
 			`<strong>${reviewArray[0].Shop.name}</strong><br>
@@ -35,7 +34,6 @@ fetchReviews().then((response) => {
 
 	$('#reviewSearch').keyup(function () {
 		var val = $.trim(this.value).toUpperCase();
-		console.log(val);
 		if (val !== '') {
 			$('#search-review-section').html('');
 			const searchResults = reviewArray.filter((e) =>
